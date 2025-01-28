@@ -1,6 +1,8 @@
 public class CalendarOutput {
 
     public static void main (String[] args) {
+        int daysInMonth = 31;
+        String[] weekdayNames = new String[] {"Mo", "Di", "Mi", "Do", "Fr", "Sa", "So"};
 
 //        System.out.println("Mo Di Mi Do Fr Sa So");
 //        System.out.println(" 1  2  3  4  5  6  7");
@@ -11,48 +13,60 @@ public class CalendarOutput {
         String month = "Januar";    // Wir wissen wie's geht, vertraut mir!
         printCalendarForMonth(month);
         printCalendarForMonth("Februar");
-        printWeekdays();
+        daysInMonth = 28;
+        printWeekdays(daysInMonth, weekdayNames);
 
         printCalendarForMonth("März");
-        printWeekdays();
+        daysInMonth = 31;
+        printWeekdays(daysInMonth,weekdayNames);
 
         printCalendarForMonth("April");
-        printWeekdays();
+        printWeekdays(daysInMonth,weekdayNames);
 
         printCalendarForMonth("Mai");
-        printWeekdays();
+        printWeekdays(daysInMonth,weekdayNames);
 
         printCalendarForMonth("Juni");
-        printWeekdays();
+        printWeekdays(daysInMonth, weekdayNames);
 
         printCalendarForMonth("Juli");
-        printWeekdays();
+        printWeekdays(daysInMonth, weekdayNames);
 
         printCalendarForMonth("August");
-        printWeekdays();
+        daysInMonth = 30;
+        printWeekdays(daysInMonth,weekdayNames);
 
         printCalendarForMonth("September");
-        printWeekdays();
+        printWeekdays(daysInMonth,weekdayNames);
 
         printCalendarForMonth("Oktober");
-        printWeekdays();
+        daysInMonth = 31;
+        printWeekdays(daysInMonth,weekdayNames);
 
         printCalendarForMonth("November");
-        printWeekdays();
+        printWeekdays(daysInMonth,weekdayNames);
 
         printCalendarForMonth("Dezember");
-        printWeekdays();
+        printWeekdays(daysInMonth,weekdayNames);
 
     }
 
  public static void printCalendarForMonth(String monthName) {
      System.out.println("Kalender für " + monthName );
-
     }
 
-    public static void printWeekdays() {
-        System.out.println("Mo Di Mi Do Fr Sa So");
-        System.out.println(" 1  2  3  4  5  6  7");
+    public static void printWeekdays(int daysInMonth, String[] weekdayNames) {
+        //System.out.println("Mo Di Mi Do Fr Sa So");
+        for (int x = 1; x <= daysInMonth; x++)
+        {
+            for (int y = 0; y < weekdayNames.length; y++)
+            {
+                System.out.printf("%2d ", x);
+                System.out.println(weekdayNames[y]);
+            }
+            System.out.println();
+        }
+       // System.out.println(" 1  2  3  4  5  6  7");
     }
 }
 
