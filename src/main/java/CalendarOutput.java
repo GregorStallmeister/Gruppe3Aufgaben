@@ -21,4 +21,10 @@ public class CalendarOutput {
         System.out.println("November");
         System.out.println("Dezember");
     }
+
+ public static void printCalendarForMonth(String monthName) {
+     System.out.println("Kalender für " + monthName );
+
+    }
 }
+
